@@ -26,6 +26,7 @@ namespace Gameplay
 			if (board->HasWon())
 			{
 				cout << "Congratulations! You Won!" << endl << "See you again!" << endl;
+				board->PrintBoard();
 				break;
 			}
 
@@ -37,6 +38,8 @@ namespace Gameplay
 			{
 				cout << "Haa!! stepped on a mine! Game over." << endl;
 				game_over = true;
+				board->RevealCell(x, y);
+				board->PrintBoard();
 			}
 			else
 				board->RevealCell(x, y);
