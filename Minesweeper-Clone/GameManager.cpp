@@ -8,6 +8,7 @@ namespace Gameplay
 	{
 		board = new Board::Board(size, mines);
 		game_over = false;
+		this->size = size;
 	}
 
 	void GameManager::StartGame()
@@ -16,6 +17,13 @@ namespace Gameplay
 
 		cout << "Enter your first move (x y): " << endl;
 		cin >> first_input_x >> first_input_y;
+
+		if (first_input_x >= size || first_input_y >= size)
+		{
+			cout << "DO.. NOT.. Enter invalid number! Game over!" << endl;
+			game_over = true;
+			return;
+		}
 
 		board->InitializeBoard(first_input_x, first_input_y);
 		board->RevealCell(first_input_x, first_input_y);
@@ -33,6 +41,13 @@ namespace Gameplay
 			int x, y;
 			cout << "Enter your next move (x y): " << endl;
 			cin >> x >> y;
+
+			if (x >= size || y >= size)
+			{
+				cout << "DO.. NOT.. Enter invalid number! Game over!" << endl;
+				game_over = true;
+				break;
+			}
 
 			if (board->IsMine(x, y))
 			{

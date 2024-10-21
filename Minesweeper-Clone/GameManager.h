@@ -10,6 +10,7 @@ namespace Gameplay
 	private:
 		Board::Board* board;
 		bool game_over;
+		int size;
 
 	public:
 		GameManager(int size, int mines);
