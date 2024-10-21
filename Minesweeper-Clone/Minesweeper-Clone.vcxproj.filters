@@ -19,6 +19,12 @@
     <Filter Include="Source Files\Cell">
       <UniqueIdentifier>{b54eccd8-dc3b-4153-8d7a-11abaa43ff05}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\GameManager">
+      <UniqueIdentifier>{cd12ad98-1391-412d-aae9-89efce721378}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameManager">
+      <UniqueIdentifier>{7ca1c04d-6572-41de-84ff-86fc065da16f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -27,10 +33,22 @@
     <ClCompile Include="Cell.cpp">
       <Filter>Source Files\Cell</Filter>
     </ClCompile>
+    <ClCompile Include="Board.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>Source Files\GameManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cell.h">
       <Filter>Header Files\Cell</Filter>
+    </ClInclude>
+    <ClInclude Include="Board.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>Header Files\GameManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

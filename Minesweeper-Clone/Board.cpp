@@ -6,6 +6,12 @@ namespace Board
 
 	Board::Board(int n, int mines) : size(n), total_mines(mines), grid(n, std::vector<Cell::Cell>(n)) {}
 
+	void Board::InitializeBoard(int first_input_x, int first_input_y)
+	{
+		PlaceMines(first_input_x, first_input_y);
+		CalculateAdjacentMines();
+	}
+
 	void Board::PlaceMines(int first_input_x, int first_input_y)
 	{
 		srand(time(0));
@@ -55,12 +61,6 @@ namespace Board
 		//overall complexity O(n^2) as internal 2 loops are defined. Works like O(n*n*3*3), ultimatly leading to O(n^2)
 	}
 
-	void Board::InitializeBoard(int first_input_x, int first_input_y)
-	{
-		PlaceMines(first_input_x, first_input_y);
-		CalculateAdjacentMines();
-	}
-
 	void Board::RevealCell(int x, int y)
 	{
 		if (!grid[x][y].IsRevealed())
@@ -91,13 +91,13 @@ namespace Board
 				if (grid[i][j].IsRevealed())
 				{
 					if (grid[i][j].IsMine())
-						cout << "* ";
+						cout << " * ";
 					else
-						cout << grid[i][j].GetAdjacentMines() << " ";
+						cout << " " << grid[i][j].GetAdjacentMines() << " ";
 				}
 				else
 				{
-					cout << "# ";
+					cout << " _ ";
 				}
 			}
 			cout << endl;
