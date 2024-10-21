@@ -15,6 +15,7 @@ namespace Board
 		std::vector<std::vector<Cell::Cell>> grid;
 
 		void PlaceMines(int first_input_x, int first_input_y);
+		void CalculateAdjacentMines();
 
 	public:
 
