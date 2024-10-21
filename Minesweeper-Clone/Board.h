@@ -4,6 +4,7 @@
 #include <vector>
 #include <cstdlib>   //random access
 #include <ctime>     //time based seed value
+#include <iostream>
 
 namespace Board
 {
@@ -18,6 +19,17 @@ namespace Board
 		void CalculateAdjacentMines();
 
 	public:
+		Board(int n, int mines);
 
+		void InitializeBoard(int first_input_x, int first_input_y);
+		void RevealCell(int x, int y);
+
+		bool IsMine(int x, int y);
+		bool IsRevealed(int x, int y);
+
+		int GetAdjacentMines(int x, int y);
+
+		void PrintBoard();
+		bool HasWon();
 	};
 }
